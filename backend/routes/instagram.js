@@ -2,11 +2,14 @@
 
 import express from 'express';
 import axios from 'axios';
+import dotenv from 'dotenv'; // Import dotenv
+
+dotenv.config(); // Load environment variables from .env file
 
 const router = express.Router();
 
-// Replace 'YOUR_ACCESS_TOKEN' with your actual Instagram access token
-const ACCESS_TOKEN = 'IGQWRPTEQ2Mk1ncUY0OHo1ZAG9KQVdNRmYycy03SUc2YmF5VE1iWTM4dmx2cjR6OUhsR1poRzNkNU5zdi04ZAWRWVTVnZAGoxXzF5WVQ0U1FSVXpDSnhueG4taXlOU0JVa3drbWVxZA3ZAoZADVkVEZADMWJoc0t2STVtcm8ZD';
+// Use the access token from the environment variable
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 // Route to get user media
 router.get('/user/media', async (req, res) => {
